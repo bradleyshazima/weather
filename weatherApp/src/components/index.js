@@ -1,5 +1,7 @@
 import Card from "./Card";
+import Info from "./Info";
 
 export {
-    Card
+    Card,
+    Info,
 }
