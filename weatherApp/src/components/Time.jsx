@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { DateTime } from 'luxon'
 
-const Time = () => {
+const Time = ({ city }) => {
+    const [time, setTime] = useState(DateTime.now().setZone(city.timezone))
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+        setTime(DateTime.now().setZone(city.timezone))
+        }, 1000)
+
+        return () => clearInterval(interval)
+    }, [city.timezone])
+
   return (
     <div className='flex flex-col gap-2 z-10 absolute right-[100px] top-[100px]'>
         <p className='text-white sf text-[24px] font-medium'
@@ -8,7 +19,7 @@ const Time = () => {
                 textShadow:
                 '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
             }}
-        >Wed, 25 June, 2025</p>
+        >{time.toFormat('ccc, dd LLLL, yyyy')}</p>
         <div 
             className='w-fit h-fit px-12 py-4 flex items-center justify-center rounded-2xl  text-[48px] text-white font-medium bg-white/10 backdrop-blur-[20px]'
             style={{
@@ -19,7 +30,7 @@ const Time = () => {
                 '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
             }}
         >
-            07:22
+            {time.toFormat('HH:mm')}
         </div>
     </div>
   )
