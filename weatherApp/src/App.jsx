@@ -57,10 +57,13 @@ function App() {
       {/* Advice follows icon */}
       {activeIcon && (
         <span
-          className="text-white sf text-[24px] font-medium absolute right-[100px] bottom-[100px]"
+          className="text-white sf text-[24px] font-medium absolute right-[100px] bottom-[100px] px-8 py-4 rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[20px]"
           style={{
             textShadow:
               '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
+            border: '1px solid rgba(255, 255, 255, 0.7)',
+            boxShadow:
+              'inset 5px 5px 5px rgba(255,255,255,0.1), inset -5px -5px 250px rgba(255,255,255,0.05), rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
           }}
         >
           {advice}

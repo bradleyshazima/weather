@@ -29,3 +29,31 @@
 main {
   transition: background-image 0.6s ease-in-out;
 }
+
+
+/* Custom scrollbar */
+
+.custom-scroll::-webkit-scrollbar {
+  height: 3px;
+  width: 2px;
+  transition: opacity 0.3s;
+  display: flex;
+  opacity: 0;
+  margin-right: -16px;
+  position: absolute;
+}
+
+.custom-scroll:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  width: 2px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background-clip: content-box;
+}
