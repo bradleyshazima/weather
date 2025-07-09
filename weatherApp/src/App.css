@@ -8,3 +8,16 @@
 * {
   font-family: 'Inter', sans-serif;
 }
+
+/* Carousel styles */
+.embla {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  width: 64px;
+}

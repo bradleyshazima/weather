@@ -2,15 +2,15 @@ import React from 'react'
 
 const Info = () => {
   return (
-    <div className='w-[400px] h-fit flex flex-col absolute top-[100px] left-[100px]'>
+    <div className='w-[320px] h-fit flex flex-col absolute top-[100px] left-[100px] gap-2'>
         <h2 
-          className='text-4xl text-white font-medium sf'
+          className='text-3xl text-white font-medium sf'
           style={{
             textShadow:
             '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
           }}
         >New York, United States</h2>
-        <p className='w-full text-wrap text-[#0F0F0F] text-[20px] mt-2 text-justify'
+        <p className='w-full text-wrap text-[#0F0F0F] text-lg text-justify'
           style={{
             textShadow:
             '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
