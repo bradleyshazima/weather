@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Card, Info } from './components'
+import { Card, Info, Time } from './components'
 
 function App() {
   const bgImage = "https://res.cloudinary.com/bradley-cdn/image/upload/f_auto,q_auto/v1752001468/newyork_scnwns.jpg"
@@ -11,6 +11,7 @@ function App() {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <Info />
+      <Time />
       <Card />
     </main>
   )
