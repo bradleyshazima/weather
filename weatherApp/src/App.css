@@ -7,7 +7,9 @@
 
 * {
   font-family: 'Inter', sans-serif;
+  user-select: none;
 }
+
 
 /* Carousel styles */
 .embla {
@@ -20,4 +22,10 @@
 }
 .embla__slide {
   width: 64px;
+}
+
+
+/* Main bg transition */
+main {
+  transition: background-image 0.6s ease-in-out;
 }
