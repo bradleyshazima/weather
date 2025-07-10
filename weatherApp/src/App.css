@@ -8,6 +8,7 @@
 * {
   font-family: 'Inter', sans-serif;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 
@@ -38,13 +39,9 @@ main {
   width: 2px;
   transition: opacity 0.3s;
   display: flex;
-  opacity: 0;
   margin-right: -16px;
   position: absolute;
-}
-
-.custom-scroll:hover::-webkit-scrollbar {
-  opacity: 1;
+  transition: all 0.4s ease-in;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
@@ -52,8 +49,53 @@ main {
   width: 2px;
 }
 
-.custom-scroll::-webkit-scrollbar-thumb {
+.custom-scroll:hover::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   background-clip: content-box;
+  opacity: 0;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  opacity: 1;
+  transition: all 0.4s ease-out;
+}
+
+
+/* Loader */
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.loader {
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: #0071e2;
+  width: 130px;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
 }
