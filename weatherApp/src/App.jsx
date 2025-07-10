@@ -14,16 +14,21 @@ function App() {
 
   const [cityKey, setCityKey] = useState(0) // Key for resetting animation
 
-
+  const imageCache = useRef({})
   const { weather } = useWeather(activeCity)
 
   useEffect(() => {
-    const loadImages = async () => {
+    const preloadImages = async () => {
       const promises = CITY_DATA.map((city) => {
         return new Promise((resolve, reject) => {
           const img = new Image()
           img.src = city.bg
-          img.onload = resolve
+
+          img.onload = () => {
+            imageCache.current[city.code] = img // ✅ Store loaded image
+            resolve()
+          }
+
           img.onerror = reject
         })
       })
@@ -37,7 +42,7 @@ function App() {
       }
     }
 
-    loadImages()
+    preloadImages()
   }, [])
 
   if (isLoading) {
@@ -72,7 +77,11 @@ function App() {
   return (
     <main
       className="w-full h-screen bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: `url(${activeCity.bg})` }}
+      style={{ 
+        backgroundImage: imageCache.current[activeCity.code]
+          ? `url(${imageCache.current[activeCity.code].src})`
+          : `url(${activeCity.bg})`,
+      }}
     >
       <AnimatePresence mode="wait">
         {!transitioning && (
