@@ -3,7 +3,6 @@ import Info from "./Info";
 import Time from "./Time";
 import Carousel from "./Carousel";
 import BlurText from "./BlurText";
-import AnimatedElement from "./AnimatedElement";
 
 export {
     Card,
@@ -11,5 +10,4 @@ export {
     Time,
     Carousel,
     BlurText,
-    AnimatedElement,
 }
