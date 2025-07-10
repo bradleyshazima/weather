@@ -1,4 +1,4 @@
-#Weather
+# Weather
 
 🌦️ Liquid Weather — Animated City-Based Weather App
 Liquid Weather is a modern, animated weather web app built with Vite + React, featuring smooth transitions, real-time weather data, and dynamic backgrounds of iconic city landmarks.
@@ -27,7 +27,18 @@ Framer Motion for page & component animations
 
 OpenWeatherMap API for forecasts
 
-Wikipedia/GeoDB API for city info
+Wikipedia API for city info
 
-Unsplash API (or manual images) for backgrounds
+### 💻 Desktop View
+NB: Now only responsive on desktop. Mobile coming soon.
 
+![Screenshot](./assets/dubai.png)
+![Screenshot](./assets/nairobi.png)
+
+<!-- ### 📱 Mobile View
+
+![Mobile Screenshot](https://i.imgur.com/yourImageID.png) -->
+
+## 🚀 Live Demo
+
+[View Live Site](https://weather-app-bradley.netlify.app/)

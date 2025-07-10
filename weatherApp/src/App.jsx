@@ -11,7 +11,9 @@ function App() {
   const [activeCity, setActiveCity] = useState(CITY_DATA[0])
   const [activeIcon, setActiveIcon] = useState(null)
   const [transitioning, setTransitioning] = useState(false)
+
   const [cityKey, setCityKey] = useState(0) // Key for resetting animation
+
 
   const { weather } = useWeather(activeCity)
 
@@ -50,21 +52,21 @@ function App() {
 
   const handleCityChange = (code) => {
     const selected = CITY_DATA.find((city) => city.code === code)
-    if (!selected || selected.code === activeCity.code) return
+    if (!selected || transitioning) return
 
     setTransitioning(true)
 
-    // Step 1: Animate out (600ms assumed from exit transition)
+    // Step 1: Animate out
     setTimeout(() => {
-      // Step 2: Switch background AFTER exit
+      // Step 2: Change city and bg
       setActiveCity(selected)
 
-      // Step 3: Delay before animating in new content
+      // Step 3: Animate in
       setTimeout(() => {
         setCityKey((prev) => prev + 1)
         setTransitioning(false)
-      }, 800) // Wait before re-animating in
-    }, 1000) // Wait before background/image switch
+      }, 800)
+    }, 1000)
   }
 
   return (
