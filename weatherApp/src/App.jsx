@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import { Card, Carousel, Info, Time } from './components'
 import { CITY_DATA } from './constants/cities'
