@@ -7,9 +7,8 @@ const Nav = () => {
 
   return (
     <motion.div 
-      onClick={() => setIsOpen(!isOpen)}
       className={`rounded-[40px] bg-white/10 backdrop-blur-[20px] 
-                  z-10 absolute bottom-[120px] lg:bottom-16 left-1/2 lg:left-16 lg:-translate-0 -translate-1/2 px-0 transition-all duration-500 ease-in-out
+                  z-10 absolute bottom-[140px] lg:bottom-16 left-1/2 lg:left-16 lg:-translate-0 -translate-1/2 px-0 transition-all duration-500 ease-in-out
                   flex items-center justify-center gap-4 h-20
                   ${isOpen ? 'w-52 px-4 delay-150' : 'w-20 px-0 delay-0'}
               `}
@@ -28,7 +27,6 @@ const Nav = () => {
       <a
         href={isOpen ? "https://www.github.com/bradleyshazima" : "#"}
         onClick={(e) => { if (!isOpen) e.preventDefault() }}
-        target='_blank'
       >
         <span 
           className={`transition-all duration-500 ease-out
@@ -55,14 +53,18 @@ const Nav = () => {
             'inset 5px 5px 5px rgba(255,255,255,0.1), inset -5px -5px 250px rgba(255,255,255,0.05), rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
         }}
       >
-        <img src={Profile} alt="My profile" className='w-full h-auto' />
+        <img 
+            src={Profile} 
+            alt="My profile" 
+            className='w-full h-auto'
+            onClick={() => setIsOpen(!isOpen)}
+        />
       </div>
 
       {/* LinkedIn - RIGHT */}
       <a
         href={isOpen ? "https://www.linkedin.com/in/bradley-shazima-97bb90246/" : "#"}
         onClick={(e) => { if (!isOpen) e.preventDefault() }}
-        target='_blank'
       >
         <span 
           className={`transition-all duration-500 ease-out
