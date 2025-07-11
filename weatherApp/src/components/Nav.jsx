@@ -9,7 +9,7 @@ const Nav = () => {
     <motion.div 
       onClick={() => setIsOpen(!isOpen)}
       className={`rounded-[40px] bg-white/10 backdrop-blur-[20px] 
-                  z-10 absolute bottom-[200px] lg:bottom-16 left-1/2 lg:left-16 lg:-translate-0 -translate-1/2 px-0 transition-all duration-500 ease-in-out
+                  z-10 absolute bottom-[120px] lg:bottom-16 left-1/2 lg:left-16 lg:-translate-0 -translate-1/2 px-0 transition-all duration-500 ease-in-out
                   flex items-center justify-center gap-4 h-20
                   ${isOpen ? 'w-52 px-4 delay-150' : 'w-20 px-0 delay-0'}
               `}
