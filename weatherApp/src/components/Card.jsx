@@ -39,7 +39,7 @@ const Card = ({ city, weather, setIcon }) => {
 
   return (
     <motion.div
-      className="flex flex-col items-center justify-between py-10 absolute inset-0 m-auto h-fit w-[260px] gap-8 rounded-[40px] bg-white/10 backdrop-blur-[20px] z-10"
+      className="2xl:scale-100 lg:scale-90 scale-80 flex flex-col items-center justify-between py-10 absolute inset-0 m-auto h-fit w-[260px] gap-8 rounded-[40px] bg-white/10 backdrop-blur-[20px] z-10"
       drag
       dragConstraints={{ top: -50, bottom: 50, left: -50, right: 50 }}
       dragElastic={0.5}

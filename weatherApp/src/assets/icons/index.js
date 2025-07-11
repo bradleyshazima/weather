@@ -9,6 +9,7 @@ import SunRain from './sun-rain.png'
 import Sun from './sun.png'
 import ThunderRain from './thunderstorm-rain.png'
 import Thunder from './thunderstorm.png'
+import Profile from './profile.jpg'
 
 export {
     Rain,
@@ -21,5 +22,6 @@ export {
     SunCloud,
     SunRain,
     Thunder,
-    ThunderRain
+    ThunderRain,
+    Profile,
 }

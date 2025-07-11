@@ -64,43 +64,50 @@ const Info = ({ city }) => {
     fetchSummary()
   }, [city])
 
-  return (
-    <div className='w-[320px] h-fit flex flex-col absolute top-[100px] xl:top-[64px] left-[100px] xl:left-[64px] gap-2 z-10'>
-      <BlurText
-        key={city.name}
-        text={`${city.name}, ${city.country}`}
-        delay={300}
-        animateBy="words"
-        direction="top"
-        className='text-3xl text-white font-medium sf'
-        style={{
-          textShadow:
-            '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
-        }}
-      />
+return (
+  <div 
+    className='hidden lg:flex scale-80 lg:scale-90
+              w-[320px] h-fit flex-col items-center
+              lg:items-start absolute top-8 left-1/2
+              lg:left-16 lg:top-16 transform -translate-x-1/2
+              lg:translate-x-0 gap-2 z-10 2xl:scale-100 2xl:left-24 2xl:top-24'>
+    <BlurText
+      key={city.name}
+      text={`${city.name}, ${city.country}`}
+      delay={300}
+      animateBy="words"
+      direction="top"
+      className='text-3xl text-white font-medium sf'
+      style={{
+        textShadow:
+          '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
+      }}
+    />
+    <div
+      className=' h-[400px] w-full p-4 rounded-2xl overflow-hidden bg-black/20 backdrop-blur-[20px]'
+      style={{
+        border: '1px solid rgba(255, 255, 255, 0.7)',
+        boxShadow:
+          'inset 5px 5px 5px rgba(255,255,255,0.1), inset -5px -5px 250px rgba(255,255,255,0.05), rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
+      }}
+    >
       <div
-        className='h-[400px] w-full p-4 rounded-2xl overflow-hidden bg-black/20 backdrop-blur-[20px]'
-        style={{
-          border: '1px solid rgba(255, 255, 255, 0.7)',
-          boxShadow:
-            'inset 5px 5px 5px rgba(255,255,255,0.1), inset -5px -5px 250px rgba(255,255,255,0.05), rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
-        }}
+        ref={scrollRef}
+        className="flex flex-col max-h-[400px] overflow-x-auto w-full gap-8 rounded-2xl group custom-scroll"
       >
-        <div
-          ref={scrollRef}
-          className="flex flex-col max-h-[400px] overflow-x-auto w-full gap-8 rounded-2xl group custom-scroll">
-          <p
-            className="text-white text-[17px] text-justify mb-4"
-            style={{
-              textShadow:
-                '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
-            }}
-          >{summary}
-          </p>
-        </div>
+        <p
+          className="text-white text-[17px] text-justify mb-4"
+          style={{
+            textShadow:
+              '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
+          }}
+        >
+          {summary}
+        </p>
       </div>
     </div>
-  )
+  </div>
+)
 }
 
 export default Info

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
-import { Card, Carousel, Info, Time } from './components'
+import { Card, Carousel, Info, Nav, Time } from './components'
 import { CITY_DATA } from './constants/cities'
 import { useWeather } from './hooks/useWeather'
 import { getAdviceFromIcon } from './hooks/getAdvice'
@@ -83,7 +83,7 @@ function App() {
           : `url(${activeCity.bg})`,
       }}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" className="p-0 m-0">
         {!transitioning && (
           <motion.div
             key={cityKey}
@@ -97,10 +97,15 @@ function App() {
             <Info city={activeCity} />
             <Time city={activeCity} />
             <Card city={activeCity} weather={weather} setIcon={setActiveIcon} />
+            <Nav />
 
             {activeIcon && (
               <motion.div
-                className="text-white sf text-[24px] font-medium absolute right-[100px] bottom-[64px] xl:right-[64px] px-8 py-4 rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[20px]"
+                className="hidden lg:flex lg:scale-75 lg:right-12 
+                          bottom-[40vh] lg:w-80 xl:w-fit  text-white sf 
+                          text-[24px] font-medium absolute right-[100px] 
+                          xl:right-[64px] px-8 py-4 rounded-2xl overflow-hidden 
+                          bg-white/10 backdrop-blur-[20px] xl:scale-100 2xl:right-24"
                 style={{
                   textShadow: '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
                   border: '1px solid rgba(255, 255, 255, 0.7)',

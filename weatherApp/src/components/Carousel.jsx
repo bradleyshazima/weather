@@ -30,7 +30,7 @@ const Carousel = ({ onSelectCity }) => {
 
   return (
     <div
-      className="h-fit overflow-hidden w-[400px] absolute bottom-[64px] left-1/2 transform -translate-x-1/2"
+      className="h-fit overflow-hidden w-[400px] absolute bottom-8 lg:bottom-12 2xl:bottom-16 2xl:scale-100 scale-80 lg:scale-90 left-1/2 transform -translate-x-1/2"
       ref={emblaRef}
     >
       <div className="flex gap-4 px-6 h-[70px]">
