@@ -15,7 +15,7 @@ const Time = ({ city }) => {
     }, [city.timezone])
 
   return (
-    <div className='flex flex-col gap-2 z-10 absolute right-[100px] top-[100px]'>
+    <div className='flex flex-col gap-2 z-10 absolute right-[100px] top-[100px] xl:right-[64px] xl:top-[64px]'>
         <BlurText
           key={city.name}
           text={`${time.toFormat('ccc, dd LLLL, yyyy')}`}

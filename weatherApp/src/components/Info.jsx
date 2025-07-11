@@ -65,7 +65,7 @@ const Info = ({ city }) => {
   }, [city])
 
   return (
-    <div className='w-[320px] h-fit flex flex-col absolute top-[100px] left-[100px] gap-2 z-10'>
+    <div className='w-[320px] h-fit flex flex-col absolute top-[100px] xl:top-[64px] left-[100px] xl:left-[64px] gap-2 z-10'>
       <BlurText
         key={city.name}
         text={`${city.name}, ${city.country}`}

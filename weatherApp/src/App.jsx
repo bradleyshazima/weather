@@ -100,7 +100,7 @@ function App() {
 
             {activeIcon && (
               <motion.div
-                className="text-white sf text-[24px] font-medium absolute right-[100px] bottom-[64px] px-8 py-4 rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[20px]"
+                className="text-white sf text-[24px] font-medium absolute right-[100px] bottom-[64px] xl:right-[64px] px-8 py-4 rounded-2xl overflow-hidden bg-white/10 backdrop-blur-[20px]"
                 style={{
                   textShadow: '0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)',
                   border: '1px solid rgba(255, 255, 255, 0.7)',
