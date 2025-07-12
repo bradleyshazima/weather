@@ -27,6 +27,7 @@ const Nav = () => {
       <a
         href={isOpen ? "https://www.github.com/bradleyshazima" : "#"}
         onClick={(e) => { if (!isOpen) e.preventDefault() }}
+        className='-z-10'
       >
         <span 
           className={`transition-all duration-500 ease-out
@@ -46,18 +47,18 @@ const Nav = () => {
 
       {/* Profile Image - CENTER (always visible) */}
       <div 
-        className="min-h-12 min-w-12 max-w-12 max-h-12 rounded-full overflow-hidden hover:scale-105 duration-300 ease-in-out"
+        className="z-999 min-h-12 min-w-12 max-w-12 max-h-12 rounded-full overflow-hidden hover:scale-105 duration-300 ease-in-out"
         style={{
           border: '1px solid rgba(255, 255, 255, 0.7)',
           boxShadow:
             'inset 5px 5px 5px rgba(255,255,255,0.1), inset -5px -5px 250px rgba(255,255,255,0.05), rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
         }}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <img 
             src={Profile} 
             alt="My profile" 
             className='w-full h-auto'
-            onClick={() => setIsOpen(!isOpen)}
         />
       </div>
 
@@ -65,6 +66,7 @@ const Nav = () => {
       <a
         href={isOpen ? "https://www.linkedin.com/in/bradley-shazima-97bb90246/" : "#"}
         onClick={(e) => { if (!isOpen) e.preventDefault() }}
+        className='-z-10'
       >
         <span 
           className={`transition-all duration-500 ease-out
